@@ -1,0 +1,2 @@
+# Only use code above 21000
+telem_fsm                21100    telem_fsm
