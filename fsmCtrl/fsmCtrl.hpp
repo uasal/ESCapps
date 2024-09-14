@@ -19,8 +19,6 @@ using namespace std;
 
 typedef MagAOX::app::MagAOXApp<true> MagAOXAppT; // This needs to be before the other header files for logging to work in other headers
 
-#include "../logger/logTypes.hpp"
-
 #include "conversion.hpp"
 #include "fsmCommands.hpp"
 #include "binaryUart.hpp"

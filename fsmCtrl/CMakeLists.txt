@@ -7,8 +7,16 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 find_package(XWCTK REQUIRED)
 
+set(CMAKE_VERBOSE_MAKEFILE ON)
+
 if(NOT XWCTK_FOUND)
     message(FATAL_ERROR "Package XWCTK not found. Please install it.")
+endif()
+
+set(LIB_PATH "${PREFIX}/${CMAKE_INSTALL_LIBDIR}" CACHE PATH "Path to the library directory")
+find_library(FLATBUFFERSLIB "libflatbuffers.a" PATHS ${LIB_PATH} REQUIRED)
+if (NOT FLATBUFFERSLIB)
+    message(FATAL_ERROR "libflatbuffers.a not found at location ${LIB_PATH}. Please install it here.")
 endif()
 
 add_executable(fsmCtrl fsmCtrl.cpp)
@@ -17,12 +25,8 @@ target_compile_options(fsmCtrl PRIVATE -Wall -g)
 
 target_link_libraries(fsmCtrl PRIVATE
                                 XWCTK::XWCTKall
+                                ${FLATBUFFERSLIB}
                                 # (optional) uncomment is using custom telemetry types
-                                $<TARGET_OBJECTS:ESClogs> 
                                 )
-
-add_dependencies(fsmCtrl generated_logTypes)
-
-target_include_directories(fsmCtrl PRIVATE ../logger)
 
 install(TARGETS fsmCtrl DESTINATION bin)

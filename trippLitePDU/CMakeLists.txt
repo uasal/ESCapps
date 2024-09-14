@@ -18,11 +18,10 @@ target_compile_options(trippLitePDU PRIVATE -Wall -g)
 # To compile as simulator
 target_compile_options(trippLitePDU PRIVATE -DXWC_SIM_MODE)
 
-target_link_libraries(trippLitePDU PRIVATE $<TARGET_OBJECTS:ESClogs>
-                                        XWCTK::XWCTKall)
-
-add_dependencies(trippLitePDU generated_logTypes)
-
-target_include_directories(trippLitePDU PRIVATE ../logger)
+target_link_libraries(trippLitePDU PRIVATE
+                                    XWCTK::XWCTKall
+                                    ${FLATBUFFERSLIB}
+                                    # (optional) uncomment is using custom telemetry types
+                                    )
 
 install(TARGETS trippLitePDU DESTINATION bin)

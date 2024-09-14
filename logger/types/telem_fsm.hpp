@@ -10,7 +10,7 @@
 #ifndef logger_types_telem_fsm_hpp
 #define logger_types_telem_fsm_hpp
 
-#include <XWCTK/XWCTK/logger/types/flatbuffer_log.hpp>
+#include "flatbuffer_log.hpp" // Has to be this path. It references the folder where the XWC build will install it.
 #include "generated/telem_fsm_generated.h"
 
 namespace MagAOX

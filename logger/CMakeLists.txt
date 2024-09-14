@@ -24,9 +24,9 @@
 #     VERBATIM
 # )
 
-# Create a custom target for generating log types
-add_custom_target(generated_logTypes DEPENDS ${CMAKE_SOURCE_DIR}/logger/generated/logTypes.hpp)
+# # Create a custom target for generating log types
+# add_custom_target(generated_logTypes DEPENDS ${CMAKE_SOURCE_DIR}/logger/generated/logTypes.hpp)
 
-add_library(ESClogs types/telem.cpp)
-target_link_libraries(ESClogs PRIVATE XWCTK::XWCTKall)
-add_dependencies(ESClogs generated_logTypes)
+# add_library(ESClogs types/telem.cpp)
+# target_link_libraries(ESClogs PRIVATE XWCTK::XWCTKall)
+# add_dependencies(ESClogs generated_logTypes)

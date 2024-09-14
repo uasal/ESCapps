@@ -5,7 +5,7 @@
   * \ingroup logger_types_files
   *
   */
-#include <XWCTK/lib/flatlogs/include/flatlogs/flatlogs.hpp>
+#include "../../../lib/flatlogs/include/flatlogs/flatlogs.hpp" // Has to be this path. It references the folder where the XWC build will install it.
 #include "../generated/logTypes.hpp"
 
 namespace MagAOX
