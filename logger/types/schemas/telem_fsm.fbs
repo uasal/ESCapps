@@ -17,3 +17,4 @@ table Telem_fsm_fb
 }
 
 root_type Telem_fsm_fb;
+
