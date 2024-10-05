@@ -362,7 +362,7 @@ namespace MagAOX
       ///@}
     };
 
-    fsmCtrl::fsmCtrl() : MagAOXApp(XWCTK_CURRENT_SHA1, XWCTK_REPO_MODIFIED), UartParser(LocalPortPinout, SocketProtocol, PacketCallbacks, false)
+    fsmCtrl::fsmCtrl() : MagAOXApp(XWCTK_CURRENT_SHA1, XWCTK_REPO_MODIFIED), UartParser(LocalPortPinout, SocketProtocol, PacketCallbacks, queries, false)
     {
       m_powerMgtEnabled = true;
       m_getExistingFirst = true; // get existing shmim (??? should or shouldn't)
