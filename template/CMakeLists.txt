@@ -23,4 +23,10 @@ target_link_libraries(templateCtrl PRIVATE
 ## (optional) If using custom telemetry types
 # add_dependencies(templateCtrl generated_logTypes) 
 
-install(TARGETS templateCtrl DESTINATION bin)
+install(TARGETS templateCtrl
+        DESTINATION bin
+        PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
+                    GROUP_READ GROUP_EXECUTE
+                    WORLD_READ WORLD_EXECUTE
+                    SETUID
+        )

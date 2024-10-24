@@ -24,4 +24,10 @@ target_link_libraries(trippLitePDU PRIVATE
                                     # (optional) uncomment is using custom telemetry types
                                     )
 
-install(TARGETS trippLitePDU DESTINATION bin)
+install(TARGETS trippLitePDU 
+        DESTINATION bin
+        PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
+                    GROUP_READ GROUP_EXECUTE
+                    WORLD_READ WORLD_EXECUTE
+                    SETUID
+        )
